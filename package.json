@@ -1,0 +1,20 @@
+{
+  "name": "graphs",
+  "version": "1.0.0",
+  "description": "The data in the data.json file represent the data point to be plotted on a line graph.",
+  "main": "app/search.js",
+  "scripts": {
+    "default": "node app/search.js",
+    "dev": "jest --watch",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1"
+  }
+}
