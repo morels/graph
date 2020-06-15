@@ -14,7 +14,7 @@ export function search(startDate, endDate) {
    */
   function searchIndex(sortedArr, indexes, item) {
     const [startIndex, endIndex] = [...indexes];
-    const nodeIndex = Math.floor((endIndex - startIndex) / 2);
+    const nodeIndex = Math.floor((endIndex - startIndex) / 2) + startIndex;
     const left = () => [startIndex, nodeIndex];
     const right = () => [nodeIndex + 1, endIndex];
 
