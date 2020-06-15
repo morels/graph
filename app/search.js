@@ -7,11 +7,11 @@ export function search(startDate, endDate) {
   const getVal = (_) => new Date(_).getTime();
 
   /**
-   * Binary search function
-   * 
-   * The algorithm operates over indices without creating any other
-   * overstructure for processing data.
-   * 
+   * Performs binary search over a sorted array
+   *
+   * It operates over indexes without creating any other overstructure for
+   * processing data.
+   *
    * @param {array[Object]} sortedArr input data containing a sorted array of series
    * @param {[number, number]} indexes the tuple representing the start and the end of the sub-array to search within
    * @param {Object} item the item whose position to look for
@@ -22,7 +22,11 @@ export function search(startDate, endDate) {
     const left = () => [startIndex, nodeIndex];
     const right = () => [nodeIndex + 1, endIndex];
 
-    if (getVal(sortedArr[nodeIndex].x) === getVal(item)) return nodeIndex;
+    if (
+      getVal(sortedArr[nodeIndex].x) === getVal(item) ||
+      startIndex === endIndex
+    )
+      return nodeIndex;
 
     return searchIndex(
       sortedArr,
