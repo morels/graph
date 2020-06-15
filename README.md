@@ -29,6 +29,6 @@ The data in the data.json file represent the data point to be plotted on a line 
 
 - Write the same function as above to match the case that:
   - The series does not always contains end_date or start_date
-  - Start_date and end_date donâ€™t match the â€œxâ€ key in the serie
+  - Start_date and end_date don't match the "x" key in the serie
 
 - Consider that we want to display the data with the key â€œextraâ€ on mouse over on a point of the key â€œscoreâ€. Write a function to format the data for this use case. 

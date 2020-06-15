@@ -7,10 +7,14 @@ export function search(startDate, endDate) {
   const getVal = (_) => new Date(_).getTime();
 
   /**
+   * Binary search function
    * 
-   * @param {array[Object]} sortedArr input data containing a sorted array of series 
+   * The algorithm operates over indices without creating any other
+   * overstructure for processing data.
+   * 
+   * @param {array[Object]} sortedArr input data containing a sorted array of series
    * @param {[number, number]} indexes the tuple representing the start and the end of the sub-array to search within
-   * @param {Object} item the item whose position to look for 
+   * @param {Object} item the item whose position to look for
    */
   function searchIndex(sortedArr, indexes, item) {
     const [startIndex, endIndex] = [...indexes];
@@ -27,17 +31,13 @@ export function search(startDate, endDate) {
     );
   }
 
-  const startIndex = searchIndex(
-    scoreSeries,
-    [0, scoreSeries.length - 1],
-    startDate
-  );
+  const startIndex = startDate
+    ? searchIndex(scoreSeries, [0, scoreSeries.length - 1], startDate)
+    : 0;
 
-  const endIndex = searchIndex(
-    scoreSeries,
-    [0, scoreSeries.length - 1],
-    endDate
-  );
+  const endIndex = endDate
+    ? searchIndex(scoreSeries, [0, scoreSeries.length - 1], endDate)
+    : scoreSeries.length - 1;
 
   return scoreSeries.slice(startIndex, endIndex + 1);
 }
