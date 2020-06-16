@@ -30,4 +30,14 @@ export function search(startDate, endDate) {
     startIndex
   );
 }
+
+/**
+ * Retrieve extra data from selected input
+ * @param {array} series DecoratedSeries containing source data
+ * @param {number} i the position of the element in `series` array
+ */
+export function getExtra(series, i) {
+  const extraSeries = (new DataReader(data)).getExtra();
+  
+  return extraSeries[series.getItemAbsoluteIndex(i)].y;
 }
